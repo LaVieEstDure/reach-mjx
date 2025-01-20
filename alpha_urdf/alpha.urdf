@@ -170,19 +170,16 @@ src/bpl_alpha_description/urdf/alpha_5_example.urdf.xacro | -->
     <child link="alpha_jaws_base_link" />
   </joint>
   <link name="alpha_jaws_base_link">
-    <inertial>
-      <mass value="0.02" />
-      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2" />
-    </inertial>
-
-
+    <!-- <inertial> -->
+    <!--   <mass value="0.02" /> -->
+    <!--   <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2" /> -->
+    <!-- </inertial> -->
   </link>
   <link name="alpha_push_rod">
     <inertial>
       <mass value="0.01" />
-      <inertia ixx="0.4" ixy="0.0" ixz="0.0" iyy="0.4" iyz="0.0" izz="0.2" />
+      <inertia ixx="0.000001" ixy="0.0" ixz="0.0" iyy="0.0000001" iyz="0.0" izz="0.0000001" />
     </inertial>
-
   </link>
   <joint name="alpha_axis_a" type="prismatic">
     <origin rpy="0 0 0" xyz="0 0 0.009" />
