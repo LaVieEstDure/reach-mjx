@@ -267,15 +267,5 @@ src/bpl_alpha_description/urdf/alpha_5_example.urdf.xacro | -->
     <limit effort="10" lower="0" upper="0.5" velocity="10" />
     <mimic joint="alpha_standard_jaws_rs1_130_joint" multiplier="1" offset="0" />
   </joint>
-  <transmission>
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="alpha_axis_e">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="e_motor">
-      <mechanicalReduction>2253</mechanicalReduction>
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </actuator>
-  </transmission>
 </robot>
 

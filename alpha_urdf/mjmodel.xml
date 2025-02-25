@@ -1,6 +1,13 @@
 <mujoco model="alpha_5_example">
   <compiler angle="radian" meshdir="./meshes/"/>
 
+  <option integrator="implicitfast" cone="elliptic"/>
+
+  <visual>
+    <headlight ambient="0.9 0.9 0.9"/>
+    <rgba actuator="0.2 0.9 0.9 11"/>
+  </visual>
+
   <asset>
     <mesh name="M3-INLINE" file="M3-INLINE.stl"/>
     <mesh name="M2-1-1" file="M2-1-1.stl"/>
