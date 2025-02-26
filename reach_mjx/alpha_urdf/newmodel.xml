@@ -15,32 +15,32 @@
 
   <worldbody>
     <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.3 0.3 0.3 1" mesh="M3-INLINE"/>
-    <geom size="0.02 0.075" pos="-0.075 0 0" quat="0.707123 0 0.70709 0" type="cylinder" rgba="0.3 0.3 0.3 1"/>
+    <geom size="0.02 0.075" pos="-0.075 0 0" quat="0.707123 0 0.70709 0" type="capsule" rgba="0.3 0.3 0.3 1"/>
     <body name="alpha_m2_1_1_link" pos="0 0 0.014">
       <inertial pos="0 0 0" quat="-0.0916368 0.728825 0.0928578 0.672157" mass="0.194" diaginertia="0.00305743 0.00305743 0.00305743"/>
-      <joint name="alpha_axis_e" pos="0 0 0" axis="0 0 1" range="0 6.3" actuatorfrcrange="-9 9"/>
+      <joint name="alpha_axis_e" pos="0 0 0" axis="0 0 1" range="-1.5 1.5" actuatorfrcrange="-9 9" ref="3.14" />
       <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.3 0.3 0.3 1" mesh="M2-1-1"/>
-      <geom size="0.02 0.033" type="cylinder" rgba="0.3 0.3 0.3 1"/>
+      <geom size="0.02 0.033" type="capsule" rgba="0.3 0.3 0.3 1"/>
       <body name="alpha_m2_joint_link" pos="-0.02 0 0.033">
         <inertial pos="0 0 0" quat="-0.0583938 0.71276 0.00651001 0.698943" mass="0.429" diaginertia="0.00891764 0.00874922 0.000797739"/>
         <joint name="alpha_axis_d" pos="0 0 0" axis="0 1 0" range="0 3.8" actuatorfrcrange="-9 9"/>
         <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.3 0.3 0.3 1" mesh="M2"/>
-        <geom size="0.02 0.0725" pos="-0.02 0 -0.0725" type="cylinder" rgba="0.3 0.3 0.3 1"/>
-        <geom size="0.02 0.02" quat="0.707141 0.707073 0 0" type="cylinder" rgba="0.3 0.3 0.3 1"/>
-        <geom size="0.02 0.02" pos="-0.04 0 -0.1453" quat="0.707141 0.707073 0 0" type="cylinder" rgba="0.3 0.3 0.3 1"/>
+        <geom size="0.02 0.0725" pos="-0.02 0 -0.0725" type="capsule" rgba="0.3 0.3 0.3 1"/>
+        <geom size="0.02 0.02" quat="0.707141 0.707073 0 0" type="capsule" rgba="0.3 0.3 0.3 1"/>
+        <geom size="0.02 0.02" pos="-0.04 0 -0.1453" quat="0.707141 0.707073 0 0" type="capsule" rgba="0.3 0.3 0.3 1"/>
         <body name="alpha_m2_1_2_link" pos="-0.04 0 -0.1453" quat="1.32679e-06 0 0 1">
           <inertial pos="0 0 0" mass="0.115" diaginertia="0.4 0.4 0.2"/>
           <joint name="alpha_axis_c" pos="0 0 0" axis="0 1 0" range="0 3.5" actuatorfrcrange="-9 9"/>
           <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.3 0.3 0.3 1" mesh="M2-1-3"/>
-          <geom size="0.02 0.0165" pos="0.02 0 0.0165" type="cylinder" rgba="0.3 0.3 0.3 1"/>
+          <geom size="0.02 0.0165" pos="0.02 0 0.0165" type="capsule" rgba="0.3 0.3 0.3 1"/>
           <body name="alpha_m1_link" pos="0.02 0 0.033" quat="0.500002 0 0 0.866024">
             <inertial pos="0 0 0" mass="0.333" diaginertia="0.4 0.4 0.2"/>
             <joint name="alpha_axis_b" pos="0 0 0" axis="0 0 -1" range="0 6.2" actuatorfrcrange="-9 9"/>
             <geom pos="0 0 0" quat="0.707141 0 -0.707073 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.3 0.3 0.3 1" mesh="RS1-100-101-123"/>
-            <geom size="0.02 0.054875" pos="0 0 0.054875" type="cylinder" rgba="0.3 0.3 0.3 1"/>
+            <geom size="0.02 0.054875" pos="0 0 0.054875" type="capsule" rgba="0.3 0.3 0.3 1"/>
             <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.3 0.3 0.3 1" mesh="RS1-124"/>
             <body name="alpha_push_rod" pos="0 0 0.10875">
-              <inertial pos="0 0 0" mass="0.01" diaginertia="0.4 0.4 0.2"/>
+              <inertial pos="0 0 0" mass="0.01" diaginertia="0.000001 0.000001 0.000001"/>
               <joint name="alpha_axis_a" pos="0 0 0" axis="0 0 1" type="slide" range="0 0.015" actuatorfrcrange="-10 10"/>
             </body>
             <body name="alpha_standard_jaws_rs1_130_link" pos="0 0.0155 0.10665">
@@ -60,5 +60,20 @@
       </body>
     </body>
   </worldbody>
+  <actuator>
+    <motor ctrllimited="true" ctrlrange="-0.5 0.5" gear="10" joint="alpha_axis_e" name="alpha_axis_e_joint"/>
+  </actuator>
+  <actuator>
+    <motor ctrllimited="true" ctrlrange="-0.5 0.5" gear="10" joint="alpha_axis_d" name="alpha_axis_d_joint"/>
+  </actuator>
+  <actuator>
+    <motor ctrllimited="true" ctrlrange="-0.5 0.5" gear="10" joint="alpha_axis_c" name="alpha_axis_c_joint"/>
+  </actuator>
+  <actuator>
+    <motor ctrllimited="true" ctrlrange="-0.5 0.5" gear="10" joint="alpha_axis_b" name="alpha_axis_b_joint"/>
+  </actuator>
+  <actuator>
+    <motor ctrllimited="true" ctrlrange="-0.5 0.5" gear="10" joint="alpha_axis_a" name="alpha_axis_a_joint"/>
+  </actuator>
 </mujoco>
 
