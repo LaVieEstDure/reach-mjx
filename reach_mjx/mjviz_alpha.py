@@ -2,7 +2,7 @@ import mujoco
 import mujoco.viewer
 
 # x = mujoco.MjModel.from_xml_path("alpha_urdf/alpha.urdf")
-x = mujoco.MjModel.from_xml_path("alpha_urdf/newmodel.xml")
+x = mujoco.MjModel.from_xml_path("alpha_model/alpha.mjcf")
 d = mujoco.MjData(x)
 
 mujoco.viewer.launch(x,d)
